@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로또 번호 추첨기</title>
+  <title>우리 딸 구분하기 & 로또 추첨기</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
@@ -13,8 +16,34 @@
   </button>
   <main class="app-shell">
     <section class="hero">
-      <h1>로또 번호 추첨기</h1>
-      <p>버튼을 눌러 1부터 45까지의 숫자 중 무작위 6개 번호를 추첨하세요.</p>
+      <h1>우리 딸 구분하기 (AI)</h1>
+      <p>Teachable Machine AI 모델을 사용하여 큰딸과 작은딸을 구분합니다.</p>
+    </section>
+
+    <section id="classifier" class="classifier-section">
+      <div class="classifier-container">
+        <div id="webcam-container" class="video-container">
+          <div class="placeholder-text">카메라를 시작하거나 사진을 업로드하세요.</div>
+        </div>
+        
+        <div class="classifier-controls">
+          <button type="button" class="primary-btn" onclick="initClassifier()">카메라 시작</button>
+          <label for="image-upload" class="secondary-btn">사진 업로드
+            <input type="file" id="image-upload" accept="image/*" style="display:none">
+          </label>
+        </div>
+
+        <div id="label-container" class="label-container">
+          <!-- 결과가 여기에 표시됩니다 -->
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="hero secondary">
+      <h2>로또 번호 추첨기</h2>
+      <p>행운의 번호 6개를 추첨해보세요.</p>
     </section>
 
     <section class="lotto-card">
@@ -52,16 +81,7 @@
       <h2>댓글</h2>
       <div id="disqus_thread"></div>
       <script>
-          /**
-          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-          /*
-          var disqus_config = function () {
-          this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          */
-          (function() { // DON'T EDIT BELOW THIS LINE
+          (function() {
           var d = document, s = d.createElement('script');
           s.src = 'https://productbulder-1.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date());
@@ -74,13 +94,10 @@
     <section class="info">
       <h2>사용 방법</h2>
       <ol>
-        <li>번호 생성 버튼을 클릭합니다.</li>
-        <li>1~45 사이의 서로 다른 6개 번호가 표시됩니다.</li>
-        <li>초기화 버튼을 누르면 다시 새로 추첨할 수 있습니다.</li>
+        <li>AI 구분기: 카메라를 켜거나 사진을 업로드하면 큰딸/작은딸을 판별합니다.</li>
+        <li>로또 추첨기: 번호 생성 버튼을 클릭하여 무작위 번호를 뽑습니다.</li>
       </ol>
     </section>
   </main>
-
-  <script src="main.js"></script>
 </body>
 </html>

@@ -99,6 +99,20 @@ body {
   font-size: clamp(2.25rem, 2.5vw, 3rem);
 }
 
+.hero.secondary {
+  margin-top: 40px;
+}
+
+.hero.secondary h2 {
+  margin: 0;
+}
+
+.section-divider {
+  margin: 60px 0;
+  border: 0;
+  border-top: 1px solid var(--card-border);
+}
+
 .hero p {
   margin: 12px auto 0;
   max-width: 34rem;
