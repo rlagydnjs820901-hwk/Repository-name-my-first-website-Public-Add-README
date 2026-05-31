@@ -1,0 +1,151 @@
+:root {
+  color-scheme: light;
+  font-family: 'Pretendard', system-ui, sans-serif;
+  background: #f9fbff;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(100%, 680px);
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.12);
+  padding: 32px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 2.5vw, 3rem);
+}
+
+.hero p {
+  margin: 12px auto 0;
+  max-width: 34rem;
+  color: #4b5563;
+}
+
+.lotto-card {
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #eef4ff 0%, #ffffff 100%);
+  border: 1px solid #dae2f2;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+}
+
+.secondary-btn {
+  background: #e2e8f0;
+  color: #1f2937;
+}
+
+.result {
+  text-align: center;
+}
+
+.result-label {
+  margin: 0 0 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #2563eb;
+}
+
+.balls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  min-height: 84px;
+}
+
+.ball {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  background: #1d4ed8;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.24);
+}
+
+.ball.yellow { background: #fbbf24; color: #1f2937; }
+.ball.green { background: #10b981; }
+.ball.blue { background: #3b82f6; }
+.ball.red { background: #ef4444; }
+.ball.gray { background: #6b7280; }
+
+.info {
+  margin-top: 26px;
+  color: #475569;
+}
+
+.info h2 {
+  margin: 0 0 10px;
+}
+
+.info ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    padding: 22px;
+  }
+
+  .ball {
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+  }
+}

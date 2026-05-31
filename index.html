@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 번호 추첨기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <h1>로또 번호 추첨기</h1>
+      <p>버튼을 눌러 1부터 45까지의 숫자 중 무작위 6개 번호를 추첨하세요.</p>
+    </section>
+
+    <section class="lotto-card">
+      <div class="controls">
+        <button id="generateBtn" class="primary-btn">번호 생성</button>
+        <button id="resetBtn" class="secondary-btn">초기화</button>
+      </div>
+      <div id="result" class="result">
+        <p class="result-label">추첨된 번호</p>
+        <div id="balls" class="balls" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="info">
+      <h2>사용 방법</h2>
+      <ol>
+        <li>번호 생성 버튼을 클릭합니다.</li>
+        <li>1~45 사이의 서로 다른 6개 번호가 표시됩니다.</li>
+        <li>초기화 버튼을 누르면 다시 새로 추첨할 수 있습니다.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
