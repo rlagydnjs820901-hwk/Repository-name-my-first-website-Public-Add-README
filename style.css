@@ -242,6 +242,18 @@ input:focus, textarea:focus {
   width: 100%;
 }
 
+/* Comments Section Styles */
+.comments-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--card-border);
+}
+
+.comments-section h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
 .info {
   margin-top: 26px;
   color: var(--info-text);
