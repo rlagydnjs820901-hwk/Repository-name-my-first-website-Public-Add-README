@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리 딸 구분하기 (AI)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
+  
+  <main class="app-shell">
+    <header class="app-header">
+      <a href="index.html" class="back-link">← 홈으로</a>
+    </header>
+
+    <section class="hero">
+      <h1>우리 딸 구분하기 (AI)</h1>
+      <p>딸의 사진을 업로드하면 AI가 누구인지 판별해줍니다.</p>
+    </section>
+
+    <section id="classifier" class="classifier-section">
+      <div class="classifier-container">
+        <div id="upload-container" class="video-container">
+          <div class="placeholder-text">사진을 업로드하여 분석을 시작하세요.</div>
+        </div>
+        
+        <div class="classifier-controls">
+          <label for="image-upload" class="primary-btn">사진 선택 및 분석
+            <input type="file" id="image-upload" accept="image/*" style="display:none">
+          </label>
+        </div>
+
+        <div id="label-container" class="label-container">
+          <!-- 결과가 여기에 표시됩니다 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <h2>사용 방법</h2>
+      <ol>
+        <li>'사진 선택 및 분석' 버튼을 클릭하여 딸의 사진을 선택합니다.</li>
+        <li>AI 모델이 사진을 분석하여 확률을 표시합니다.</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
