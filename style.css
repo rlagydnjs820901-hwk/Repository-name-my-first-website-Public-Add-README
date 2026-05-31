@@ -8,6 +8,8 @@
   --btn-secondary-bg: #e2e8f0;
   --btn-secondary-text: #1f2937;
   --info-text: #475569;
+  --ball-shadow: rgba(29, 78, 216, 0.24);
+  --shell-shadow: rgba(15, 23, 42, 0.12);
   
   color-scheme: light;
   font-family: 'Pretendard', system-ui, sans-serif;
@@ -26,6 +28,8 @@
   --btn-secondary-bg: #334155;
   --btn-secondary-text: #f8fafc;
   --info-text: #94a3b8;
+  --ball-shadow: rgba(0, 0, 0, 0.4);
+  --shell-shadow: rgba(0, 0, 0, 0.3);
   color-scheme: dark;
 }
 
@@ -63,6 +67,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 100;
   padding: 0;
+  transition: all 0.3s ease;
 }
 
 .theme-toggle .moon-icon { display: none; }
@@ -73,9 +78,19 @@ body {
   width: min(100%, 680px);
   background: var(--app-bg);
   border-radius: 24px;
-  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 26px 60px var(--shell-shadow);
   padding: 32px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 2.5vw, 3rem);
 }
 
 .hero p {
@@ -93,10 +108,75 @@ body {
   border: 1px solid var(--card-border);
 }
 
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+}
+
 .secondary-btn {
   background: var(--btn-secondary-bg);
   color: var(--btn-secondary-text);
 }
+
+.result {
+  text-align: center;
+}
+
+.result-label {
+  margin: 0 0 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #2563eb;
+}
+
+.balls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  min-height: 84px;
+}
+
+.ball {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  background: #1d4ed8;
+  box-shadow: 0 10px 24px var(--ball-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ball.yellow { background: #fbbf24; color: #1f2937; }
+.ball.green { background: #10b981; }
+.ball.blue { background: #3b82f6; }
+.ball.red { background: #ef4444; }
+.ball.gray { background: #6b7280; }
 
 .info {
   margin-top: 26px;
