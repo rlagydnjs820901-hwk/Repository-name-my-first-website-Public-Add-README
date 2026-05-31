@@ -135,16 +135,21 @@ body {
   justify-content: center;
 }
 
-button {
+.primary-btn, .secondary-btn {
   border: none;
   border-radius: 999px;
   padding: 14px 22px;
   font-size: 1rem;
   cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: inherit;
 }
 
-button:hover {
+.primary-btn:hover, .secondary-btn:hover {
   transform: translateY(-1px);
 }
 
