@@ -3,6 +3,23 @@ const maxNumber = 45;
 const generateBtn = document.getElementById('generateBtn');
 const resetBtn = document.getElementById('resetBtn');
 const ballsContainer = document.getElementById('balls');
+const themeToggle = document.getElementById('themeToggle');
+
+// Theme Management
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+initTheme();
 
 function getBallColor(value) {
   if (value <= 10) return 'yellow';
