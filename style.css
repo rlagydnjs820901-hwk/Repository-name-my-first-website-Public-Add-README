@@ -54,6 +54,34 @@ body {
   padding: 40px 24px;
 }
 
+.top-nav {
+  position: fixed;
+  top: 20px;
+  right: 80px; /* Space for theme toggle */
+  display: flex;
+  gap: 12px;
+  z-index: 100;
+}
+
+.small-link {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--app-bg);
+  border: 1px solid var(--card-border);
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.small-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+}
+
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -88,13 +116,7 @@ body {
 }
 
 .app-header {
-  margin-bottom: 24px;
-}
-
-.back-link {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 600;
+  display: none; /* Hide old back link header */
 }
 
 .hero {
@@ -204,4 +226,6 @@ input:focus, textarea:focus { outline: none; border-color: #2563eb; box-shadow: 
   .app-shell { padding: 24px; }
   .hero h1 { font-size: 2rem; }
   .portal-card { flex-direction: column; text-align: center; }
+  .top-nav { right: 70px; gap: 8px; }
+  .small-link { padding: 6px 12px; font-size: 0.75rem; }
 }
